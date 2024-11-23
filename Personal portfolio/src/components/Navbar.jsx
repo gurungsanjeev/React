@@ -7,7 +7,7 @@ const Navbar = (props) => {
         <>
             <nav className={`flex bg-${props.mod} text-${props.mod==="light"?"dark":"light"}`}>
 
-                <div className="logo "><NavLink  to="" >Sanjeev</NavLink></div>
+                <div className="logo "><NavLink  to="" ><h1 className='font-semibold'>Sanjeev</h1> </NavLink></div>
                 <ul>
                     <li><NavLink className={(e) => { return e.isActive ? "active" : "" }} to="">Home</NavLink></li>
                     <li ><NavLink className={(e) => { return e.isActive ? "active" : "" }} to="about">About</NavLink></li>
