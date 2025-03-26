@@ -1,0 +1,65 @@
+
+@import "tailwindcss";
+.main-container{
+  
+  background: rgb(255, 255, 255);
+  justify-content: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.calculator{
+  background: rgb(43, 42, 42);
+  height: 480px;
+  max-width: 600px;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 9px 9px 11px 4px grey;
+}
+#display{
+  background-color: rgb(204, 204, 204);
+  width: 100%;
+  padding: 5px 0px;
+ border: none;
+ text-align: right;
+ font-size: large;
+ font-weight: 600;
+ 
+}
+hr{
+  color: white;
+}
+.keys{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+button{
+  height: 50px;
+  width: 50px;
+  background-color: rgb(112, 107, 107);
+  color: white;
+  gap: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-size: medium;
+  font-weight: 500;
+  box-shadow: 2px 0px 2px 1px blanchedalmond;
+}
+
+button:hover{
+  background-color: rgb(48, 47, 47);
+  color: white;
+}
+button:active{
+  background-color: rgb(170, 166, 166);
+  color: rgb(66, 66, 66);
+}
+.operator-btn{
+  background: rgb(247, 176, 22);
+
+}
+.clear-btn{
+  background: rgb(247, 150, 22);
+
+}
