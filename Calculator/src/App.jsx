@@ -28,6 +28,7 @@ function App() {
           <input type="display"  
           readOnly 
           value={display}
+          placeholder='0'
         
           id='display'/>
           </span>

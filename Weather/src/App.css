@@ -1,0 +1,20 @@
+@import "tailwindcss";
+.col > img{
+  width: 20%;
+  height: 70%;
+}
+
+.col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  margin: 10% 0;
+}
+
+.col > .data{
+  margin: 0px 20px;
+}
+h1{
+  color: white;
+}
