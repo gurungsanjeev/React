@@ -6,19 +6,36 @@ import Data from './Components/data'
 
 function App() {
   const [score, setScore] = useState(0);
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [questionSet, setQuestionSet] = useState(Data[index]);
 
 
   const checkAns = (e, ans) => {
+    if (selectedOption) return; // Prevent further selections once an option is selected
+
+    setSelectedOption(ans); // Mark the option as selected
     if (questionSet.answer == ans) {
-e.target.classList.add("correct")
+      setScore(score + 1);
+      e.target.classList.add("correct")
+     
     }
-    else{
+    else {
       e.target.classList.add("wrong")
     }
+   
   }
 
+
+  const handleNxt=()=>{
+    if (index < Data.length -1){
+      setSelectedOption(null);
+      setIndex(index+1);
+      setQuestionSet(Data[index+1]);
+      setSelectedOption(null);
+    }
+    
+  }
 
   return (
     <>
@@ -34,21 +51,24 @@ e.target.classList.add("correct")
           </div>
           <div className='gap-2 mt-4'>
 
-            {/* <li className='list-none bg-white mt-3 rounded-sm p-2'>Charles Babbage</li>
-          <li className='list-none bg-white mt-3 rounded-sm p-2'>Lady Augusta</li>
-          <li className='list-none bg-white mt-3 rounded-sm p-2'>Antio</li>
-          <li className='list-none bg-white mt-3 rounded-sm p-2'>Harry</li> */}
 
-
+            {/* /// displaying the number of list using map function */}
             {questionSet.options.map((options, index) => (
-              <li onClick={(e)=>{checkAns(e)}}>{options}</li>
+              <li key={index} onClick={(e) => { checkAns(e, options) }}>{options}</li>
             ))}
           </div>
 
 
 
-          <button className='px-4 py-2 bg-blue-500 rounded mt-4 font-semibold text-white hover:bg-blue-700'>Next</button>
-          <p className='mt-4'>question 1 out 5</p>
+          <button 
+          className='px-4 py-2
+           bg-blue-500
+            rounded mt-4
+             font-semibold
+              text-white
+               hover:bg-blue-700'
+               onClick={handleNxt}>Next</button>
+          <p className='mt-4'>question {index+1} out {Data.length}</p>
         </div>
       </div>
 

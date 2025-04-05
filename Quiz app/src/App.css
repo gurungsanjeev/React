@@ -12,9 +12,13 @@ li{
     list-style: none;
     border-radius: 5px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
-.correct{
+.correct, .correct:hover{
   background-color: rgb(69, 163, 69);
   border: green;
+}
+.wrong, .wrong:hover{
+  background-color: rgb(231, 101, 101);
 }
