@@ -15,10 +15,3 @@ li{
     cursor: pointer;
 }
 
-.correct, .correct:hover{
-  background-color: rgb(69, 163, 69);
-  border: green;
-}
-.wrong, .wrong:hover{
-  background-color: rgb(231, 101, 101);
-}
