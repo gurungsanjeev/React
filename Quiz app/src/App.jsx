@@ -7,7 +7,7 @@ function App() {
   const [index, setIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isFinished, setIsFinished] = useState(false);
-  const [questionSet, setQuestionSet] = useState(Data[0]);
+  const [questionSet, setQuestionSet] = useState(Data[0]); 
   const [answered, setAnswered] = useState(false);
 
   const checkAns = (option) => {
@@ -15,7 +15,7 @@ function App() {
 
     setSelectedOption(option);
 
-    if (questionSet.answer === option) {
+    if (questionSet.answer === option) { /// option is an selected answer
       setScore(score + 1);
     }
 

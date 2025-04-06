@@ -1,0 +1,4 @@
+@import "tailwindcss";
+.inner-container{
+  box-shadow:3px 3px 6px whitesmoke;
+}
