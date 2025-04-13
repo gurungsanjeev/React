@@ -1,115 +1,117 @@
 const Data = [
   
-  {
-    question: "Which is the largest continent in the world?",
-    options: ["Africa", "Asia", "Europe", "North America"],
-    answer: "Asia"
-  },
-  {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Mars", "Mercury", "Venus", "Earth"],
-    answer: "Mars"
-  },
-  {
-    question: "How many days are there in a week?",
-    options: ["6", "8", "7", "5"],
-    answer: "7"
-  },
-  {
-    question: "What is the chemical formula of water?",
-    options: ["H₂O", "CO₂", "O₂", "N₂"],
-    answer: "H₂O"
-  },
-  {
-    question: "Who was the first president of the United States?",
-    options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"],
-    answer: "George Washington"
-  },
-  {
-    question: "Which is the longest river in the world?",
-    options: ["Amazon", "Nile", "Yangtze", "Mississippi"],
-    answer: "Nile"
-  },
-  {
-    question: "Who developed the theory of relativity?",
-    options: ["Isaac Newton", "Nikola Tesla", "Albert Einstein", "Galileo Galilei"],
-    answer: "Albert Einstein"
-  },
-  {
-    question: "What is the capital of France?",
-    options: ["Rome", "Berlin", "Madrid", "Paris"],
-    answer: "Paris"
-  },
-  {
-    question: "Which country is known as the Land of the Rising Sun?",
-    options: ["China", "Japan", "India", "South Korea"],
-    answer: "Japan"
-  },
-  {
-    question: "Which is the largest ocean on Earth?",
-    options: ["Atlantic", "Arctic", "Indian", "Pacific"],
-    answer: "Pacific"
-  },
-  {
-    question: "Which element has the chemical symbol 'O'?",
-    options: ["Oxygen", "Osmium", "Ozone", "Opium"],
-    answer: "Oxygen"
-  },
-  {
-    question: "What is the largest animal on Earth?",
-    options: ["Elephant", "Blue Whale", "Giraffe", "Shark"],
-    answer: "Blue Whale"
-  },
-  {
-    question: "In which year did the Titanic sink?",
-    options: ["1912", "1905", "1920", "1898"],
-    answer: "1912"
-  },
-  {
-    question: "Who invented the telephone?",
-    options: ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Michael Faraday"],
-    answer: "Alexander Graham Bell"
-  },
-  {
-    question: "What is the hardest natural substance on Earth?",
-    options: ["Gold", "Iron", "Diamond", "Silver"],
-    answer: "Diamond"
-  },
-  {
-    question: "Which country is home to the Great Barrier Reef?",
-    options: ["Australia", "USA", "India", "Brazil"],
-    answer: "Australia"
-  },
-  {
-    question: "What is the smallest country in the world?",
-    options: ["Vatican City", "Monaco", "Nauru", "San Marino"],
-    answer: "Vatican City"
-  },
-  {
-    question: "Which planet is closest to the Sun?",
-    options: ["Venus", "Earth", "Mercury", "Mars"],
-    answer: "Mercury"
-  },
-  {
-    question: "Which country is famous for its pyramids?",
-    options: ["Egypt", "Greece", "Mexico", "China"],
-    answer: "Egypt"
-  },
-  {
-    question: "Who painted the Mona Lisa?",
-    options: ["Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
-    answer: "Leonardo da Vinci"
-  },
-  {
-    question: "Which ocean is the largest?",
-    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-    answer: "Pacific Ocean"
-  },
-  {
-    question: "Which element is represented by the symbol 'Na'?",
-    options: ["Sodium", "Nitrogen", "Nickel", "Neon"],
-    answer: "Sodium"
-  }
+  
+  
+  
+    {
+      question: "उपभोक्ता सिद्धान्तमा सीमांत प्रतिस्थापन दर (MRS) भन्नाले के जनाउँछ?",
+      options: [
+        "एउटा वस्तु उपभोग गर्न आवश्यक आम्दानीको मात्रा",
+        "उही उपयोगिताको स्तर कायम राख्दै उपभोक्ताले एउटा वस्तुको सट्टा अर्को वस्तु किन्ने दर",
+        "वस्तुको बजार मूल्य",
+        "मूल्यमा भएको परिवर्तनका कारण कुल उपयोगितामा भएको परिवर्तन"
+      ],
+      answer: "उही उपयोगिताको स्तर कायम राख्दै उपभोक्ताले एउटा वस्तुको सट्टा अर्को वस्तु किन्ने दर"
+    },
+    {
+      question: "छोटो अवधिमा कुन लागत परिवर्तन गर्न सकिँदैन?",
+      options: [
+        "परिवर्तनीय लागत",
+        "कुल लागत",
+        "स्थिर लागत",
+        "सीमांत लागत"
+      ],
+      answer: "स्थिर लागत"
+    },
+    {
+      question: "सिद्ध प्रतिस्पर्धामा नाफा अधिकतम हुने अवस्था कुन हो?",
+      options: [
+        "मूल्य = सीमांत आम्दानी",
+        "मूल्य = सीमांत लागत",
+        "सीमांत आम्दानी = औसत लागत",
+        "औसत आम्दानी = कुल लागत"
+      ],
+      answer: "मूल्य = सीमांत लागत"
+    },
+    {
+      question: "निस्वार्थ वक्रहरू (Indifference curves) सम्बन्धी कुन कथन सत्य हो?",
+      options: [
+        "उनीहरू माथितर्फ झुक्दछन्",
+        "उनीहरू एक-अर्कालाई काट्दछन्",
+        "उच्च वक्रले उच्च उपयोगिता देखाउँछ",
+        "उनीहरू मूलमा प्रति-अवधारित हुन्छन्"
+      ],
+      answer: "उच्च वक्रले उच्च उपयोगिता देखाउँछ"
+    },
+    {
+      question: "उत्पादन प्रकार्यमा सीमांत प्रतिफल घट्दो हुन्छ जब:",
+      options: [
+        "थप इनपुट प्रयोग गर्दा कुल उत्पादन घट्छ",
+        "थप इनपुटले स्थिर रूपमा उत्पादन बढाउँछ",
+        "थप इनपुटले थोरै मात्र थप उत्पादन दिन्छ",
+        "उत्पादन बढ्दो दरमा बढ्छ"
+      ],
+      answer: "थप इनपुटले थोरै मात्र थप उत्पादन दिन्छ"
+    },
+    {
+      question: "छोटो अवधिमा 'shutdown point' कहिले आउँछ?",
+      options: [
+        "जब कुल लागत = कुल आम्दानी",
+        "जब सीमांत आम्दानी < सीमांत लागत",
+        "जब मूल्य औसत परिवर्तनीय लागतभन्दा कम हुन्छ",
+        "जब औसत आम्दानी = कुल लागत"
+      ],
+      answer: "जब मूल्य औसत परिवर्तनीय लागतभन्दा कम हुन्छ"
+    },
+    {
+      question: "तलमध्ये कुन कुराले आपूर्तिको वक्र बायाँ सर्छ?",
+      options: [
+        "उत्पादन लागतमा गिरावट",
+        "प्रविधिको प्रगति",
+        "इनपुट मूल्यमा वृद्धि",
+        "उत्पादकहरूलाई अनुदान"
+      ],
+      answer: "इनपुट मूल्यमा वृद्धि"
+    },
+    {
+      question: "यदि दुई वस्तुहरू बीचको क्रस मूल्य लोच सकारात्मक छ भने ती वस्तुहरू के हुन्छन्?",
+      options: [
+        "पूरक वस्तुहरू",
+        "प्रतिस्थापन वस्तुहरू",
+        "घटिया वस्तुहरू",
+        "गिफ्फेन वस्तुहरू"
+      ],
+      answer: "प्रतिस्थापन वस्तुहरू"
+    },
+    {
+      question: "लामो अवधिको औसत लागत वक्र सामान्यतः U-आकारको किन हुन्छ?",
+      options: [
+        "सीमांत लागत वक्रका कारण",
+        "औसत परिवर्तनीय लागत वक्रका कारण",
+        "औसत स्थिर लागत वक्रका कारण",
+        "अर्थव्यवस्थाको मापन लाभ र हानिका कारण"
+      ],
+      answer: "अर्थव्यवस्थाको मापन लाभ र हानिका कारण"
+    },
+    {
+      question: "मूल्य विभेदन (Price discrimination) कहिले सम्भव हुन्छ?",
+      options: [
+        "जब फर्मसँग बजार शक्ति हुँदैन",
+        "जब एउटै मूल्य निर्धारण गरिन्छ",
+        "जब फर्मले बजारलाई विभाजन गर्न र पुनःबिक्री रोक्न सक्छ",
+        "जब सबै उपभोक्ताहरूको रुचि समान हुन्छ"
+      ],
+      answer: "जब फर्मले बजारलाई विभाजन गर्न र पुनःबिक्री रोक्न सक्छ"
+    }
+  
+  
+  
+
+
+
+    
+  
+  
   
   
 ];
