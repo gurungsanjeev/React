@@ -8,6 +8,7 @@ import { MdGroups } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { RiGamepadLine } from "react-icons/ri";
 import { FaFacebookMessenger } from "react-icons/fa";
+import { PiDotsNineBold } from "react-icons/pi";
 const Navbar = () => {
   return (
     <>
@@ -43,6 +44,9 @@ const Navbar = () => {
           {/* ******************right components********************** */}
           <div className="right-components flex items-center gap-2">
             <ul className="flex items-center gap-2">
+            <li className="cursor-pointer bg-gray-200 rounded-full p-3">
+                <PiDotsNineBold  className="text-xl"/>
+              </li>
               <li className="cursor-pointer bg-gray-200 rounded-full p-3">
                 <FaFacebookMessenger className="text-xl" />
               </li>
