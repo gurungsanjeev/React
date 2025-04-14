@@ -11,10 +11,11 @@ import { FaFacebookMessenger } from "react-icons/fa";
 const Navbar = () => {
   return (
     <>
-      <nav className="shadow">
-        <div className="p-2.5 flex gap-20">
+      <nav className="shadow w-full bg-white sticky top-0 z-50">
+        {/* <div className="p-2.5 flex gap-20"> */}
+        <div className=" mx-auto p-2.5 flex gap-12  items-center">
 
-          <div className="logo-search  flex w-[21%]">
+          <div className="logo-search  flex w-[25%] relative">
 
             <img src="facebook-logo.png" alt="" className="h-10" />
             <CiSearch className="h-[41px] w-[23px] absolute left-[68px]" />
@@ -37,16 +38,21 @@ const Navbar = () => {
               <i className="fa-light fa-gamepad"></i>
             </ul>
           </div>
-          <div className="right-components  items-center ">
-            <ul className="flex  items-center gap-2">
-              <li className="bg-gray-400 rounded-full p-3 "><FaFacebookMessenger /></li>
-              <li className="bg-gray-400 rounded-full p-3"><FaFacebookMessenger /></li>
-              <li className="bg-gray-400 rounded-full p-3"><IoNotifications /></li>
-              <li className="rounded-full">
-                <img src="user.jpg" alt="" className="w-[40px] h-[40px] object-cover rounded-full" />
+
+
+          {/* ******************right components********************** */}
+          <div className="right-components flex items-center gap-2">
+            <ul className="flex items-center gap-2">
+              <li className="cursor-pointer bg-gray-200 rounded-full p-3">
+                <FaFacebookMessenger className="text-xl" />
+              </li>
+              <li className="cursor-pointer bg-gray-200 rounded-full p-3">
+                <IoNotifications className="text-xl" />
+              </li>
+              <li className="cursor-pointer rounded-full">
+                <img src="user.jpg" alt="User Profile" className="w-[40px] h-[40px] object-cover rounded-full" />
               </li>
             </ul>
-
           </div>
         </div>
       </nav>
