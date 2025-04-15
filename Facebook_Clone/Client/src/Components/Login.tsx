@@ -1,5 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+
+
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+
+
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        axios.post('http://localhost:3001/login', { email, password })
+            .then(result => {
+                console.log(result)
+                if(result.data === "Success"){
+
+                    navigate('/home')
+                }
+                
+            })
+            .catch(err => console.log(err))
+
+    }
+
     return (
         <div className="bg-[#f0f2f5] min-h-screen flex items-center justify-center">
             <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -14,27 +40,32 @@ const Login = () => {
                 {/* Signup Card */}
                 <div>
 
-                
-                <div className="bg-white p-5 rounded-lg shadow-lg w-[396px]">
-                    <form className="flex flex-col gap-4">
-                        <input
-                            type="text"
-                            placeholder="Email or phone number"
-                            className="px-4 py-3 border border-gray-300 rounded-md text-[17px] focus:outline-blue-500"
-                        />
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className="px-4 py-3 border border-gray-300 rounded-md text-[17px] focus:outline-blue-500"
-                        />
 
-                        <button
-                            type="submit"
-                            className="bg-blue-600 text-white py-3 rounded-md font-semibold text-lg hover:bg-blue-700"
-                        >
-                            Log In
-                        </button>
+                    <div className="bg-white p-5 rounded-lg shadow-lg w-[396px]">
+                        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                value={email}
+                                placeholder="Email or phone number"
+                                className="px-4 py-3 border border-gray-300 rounded-md text-[17px] focus:outline-blue-500"
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <input
+                                type="password"
+                                value={password}
+                                placeholder="Password"
+                                className="px-4 py-3 border border-gray-300 rounded-md text-[17px] focus:outline-blue-500"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
 
+                            <button
+                                type="submit"
+                                className="bg-blue-600 text-white py-3 rounded-md font-semibold text-lg hover:bg-blue-700"
+                            >
+                                Log In
+                            </button>
+
+                        </form>
                         <a
                             href="#"
                             className="text-blue-600 text-sm text-center hover:underline"
@@ -44,26 +75,25 @@ const Login = () => {
 
                         <hr className="my-2 bg-[#f0f2f5]" />
                         <NavLink to="/signup">
-                        <button
-                            type="button"
-                            className="bg-green-600 text-white py-3 rounded-md font-semibold text-md hover:bg-green-700 mx-auto w-fit px-5 flex justify-center"
-                        >
-                            Create New Account
-                        </button>
+                            <button
+                                type="button"
+                                className="bg-green-600 text-white py-3 rounded-md font-semibold text-md hover:bg-green-700 mx-auto w-fit px-5 flex justify-center"
+                            >
+                                Create New Account
+                            </button>
                         </NavLink>
-                    </form>
+
+                    </div>
+                    <p className="text-sm text-center mt-6">
+                        <span className="font-semibold hover:underline cursor-pointer">
+                            Create a Page
+                        </span>{" "}
+                        for a celebrity, brand or business.
+                    </p>
 
                 </div>
-                <p className="text-sm text-center mt-6">
-                    <span className="font-semibold hover:underline cursor-pointer">
-                        Create a Page
-                    </span>{" "}
-                    for a celebrity, brand or business.
-                </p>
 
-                </div>
 
-               
             </div>
         </div>
     );

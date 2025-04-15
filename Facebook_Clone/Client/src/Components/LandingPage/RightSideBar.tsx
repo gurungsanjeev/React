@@ -39,7 +39,7 @@ const RightSideBar = () => {
       activeStatus: "false",
     },
     {
-      profileImg: "./contact-list/user2.jpg",
+      profileImg: "./contact-list/user 2.jpg",
       name: "Walker",
       activeStatus: "false",
     },
