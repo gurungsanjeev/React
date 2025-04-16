@@ -6,6 +6,7 @@ import Signup from './Components/Signup.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './Components/Login.tsx'
 import Home from './Components/Home.tsx'
+import PageNotFound from './Components/ErrorPage/PageNotFound.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
 {
   path:"/home",
   element: <Home/>
+},
+{
+  path:"*",
+  element: <PageNotFound/>
 },
 ])
 

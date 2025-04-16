@@ -16,6 +16,7 @@ const Signup = () => {
     const navigate = useNavigate();
 
     const generateDays = () => {
+
         return Array.from({ length: 31 }, (_, i) => (
             <option key={i + 1} value={i + 1}>
                 {i + 1}
@@ -40,11 +41,12 @@ const Signup = () => {
             return;
         }
 
-        axios.post("http://localhost:3001/signup", {fname,lname,email,password,gender,birthDay,birthMonth,birthYear})
-        .then(result => {console.log(result)
-navigate('/login')
-        })
-        .catch(err=> console.log(err));
+        axios.post("http://localhost:3001/signup", { fname, lname, email, password, gender, birthDay, birthMonth, birthYear })
+            .then(result => {
+                console.log(result)
+                navigate('/login')
+            })
+            .catch(err => console.log(err));
 
         // console.log({
         //     fname,
@@ -118,7 +120,7 @@ navigate('/login')
                                         required
                                         className="w-1/3 border border-gray-300 rounded-md p-1"
                                     >
-                                        {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(
+                                        {["Month", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(
                                             (month, i) => (
                                                 <option key={i} value={month}>
                                                     {month}
