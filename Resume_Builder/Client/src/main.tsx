@@ -4,6 +4,7 @@ import './index.css'
 import Login from './Components/Login/Login.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signup from './Components/Signup/Signup.tsx'
+import Builder from './Components/CV Builder/Builder.tsx'
 
 
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 {
   path:"/login",
   element: <Login  />
+},
+{
+  path:"/home",
+  element: <Builder  />
 },
 ])
 

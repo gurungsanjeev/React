@@ -1,12 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import NavBar from '../NavBar'
+import Footer from '../Footer'
+import NavBar from '../Navbar/NavBar'
 const Login = () => {
   return (
     <>
 
     <NavBar/>
-      <div className="flex items-center justify-center min-h-screen w-full bg-gray-100">
+      <div className="flex items-center justify-center h-screen w-full bg-gray-100">
         <div className="w-full max-w-sm p-8 bg-white rounded-xl shadow-lg ">
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
           <form>
@@ -52,6 +53,8 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      <Footer/>
     </>
   )
 }

@@ -1,7 +1,7 @@
 
 import { NavLink } from 'react-router-dom'
 import Login from '../Login/Login'
-import NavBar from '../NavBar'
+import NavBar from '../Navbar/NavBar'
 
 const Signup = () => {
   return (
