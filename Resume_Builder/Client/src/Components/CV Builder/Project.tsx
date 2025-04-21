@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const EducationDetails = () => {
+const Project = () => {
     const [sections, setSections] = useState([{ level: "", institution: "", year: " ", gpa: "" }])
 
 
@@ -24,7 +24,7 @@ const EducationDetails = () => {
                 <form action="">
 
                     <fieldset className="border border-gray-300 rounded p-4">
-                        <legend className="text-lg font-semibold px-2">Education Background</legend>
+                        <legend className="text-lg font-semibold px-2">Projects / Research Work (optional)</legend>
 
                         {sections.map((section, index) => (
                             <>
@@ -33,8 +33,8 @@ const EducationDetails = () => {
                                         {/* First Name */}
                                         <div>
                                             <label htmlFor="firstName" className="block font-medium mb-1">Educations</label>
-                                            <select name="" id=""  className="w-full h-[42px] border border-blue-400 rounded-lg">
-                                                <option value="Secondary">---Educations---</option>
+                                            <select name="" id="" className="w-full h-[42px] border border-blue-400 rounded-lg">
+                                                <option value="Secondary">-----Education-----</option>
                                                 <option value="Secondary">Secondary</option>
                                                 <option value="Higher">Higher</option>
                                                 <option value="Undergraduate">Undergraduate</option>
@@ -110,4 +110,4 @@ const EducationDetails = () => {
     )
 }
 
-export default EducationDetails
+export default Project
