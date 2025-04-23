@@ -11,7 +11,7 @@ const Certification = () => {
         setSections([...sections, { level: "", institution: "", year: "", gpa: "" }]);
     };
     // ****Delete  section ******
-    const handleDeleteSection = (indexToDelete) => {
+    const handleDeleteSection = (indexToDelete: number) => {
         const updatedSections = sections.filter((_, index) => index !== indexToDelete);
         setSections(updatedSections);
     };
