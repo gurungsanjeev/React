@@ -7,6 +7,7 @@ import Experiences from "./Experiences";
 import Skills from "./Skills";
 import Certification from "./Certification";
 import Project from "./Project";
+import { Link } from "react-router-dom";
 
 const Builder = () => {
     const [pagination, setPagination] = useState(0);
@@ -72,12 +73,14 @@ const Builder = () => {
                         </button>
                     )}
                     {pagination == steps.length-1 && (
+                        <Link to="/normalDesign">
                         <button
                             className="bg-blue-700 text-white p-4 rounded-lg mt-4 px-8 hover:bg-blue-800"
                             onClick={handleNxt}
-                        >
-                            Preview
+                            >
+                            Proceed
                         </button>
+                            </Link>
                     )}
                 </div>
             </div>

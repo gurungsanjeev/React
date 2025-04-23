@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signup from './Components/Signup/Signup.tsx'
 import Builder from './Components/CV Builder/Builder.tsx'
 import EducationDetails from './Components/CV Builder/EducationDetails.tsx'
+import NormalDesign from './Components/CV Builder Design/NormalDesgin.tsx'
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
 {
   path:"/-education",
   element: < EducationDetails />
+},
+{
+  path:"/normalDesign",
+  element: < NormalDesign />
 },
 ])
 
