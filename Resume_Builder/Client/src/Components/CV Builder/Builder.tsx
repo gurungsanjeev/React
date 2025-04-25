@@ -45,6 +45,7 @@ const Builder = () => {
             title: "Certification & Training",
             content: <Certification/>,
         },
+      
     ];
 
     return (
@@ -73,7 +74,7 @@ const Builder = () => {
                         </button>
                     )}
                     {pagination == steps.length-1 && (
-                        <Link to="/normalDesign">
+                        <Link to="/LayoutSelection">
                         <button
                             className="bg-blue-700 text-white p-4 rounded-lg mt-4 px-8 hover:bg-blue-800"
                             onClick={handleNxt}

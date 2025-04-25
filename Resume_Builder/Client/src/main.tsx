@@ -7,6 +7,7 @@ import Signup from './Components/Signup/Signup.tsx'
 import Builder from './Components/CV Builder/Builder.tsx'
 import EducationDetails from './Components/CV Builder/EducationDetails.tsx'
 import NormalDesign from './Components/CV Builder Design/NormalDesgin.tsx'
+import LayoutSelection from './Components/CV Builder/LayoutSelection.tsx'
 
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
 {
   path:"/normalDesign",
   element: < NormalDesign />
+},
+{
+  path:"/layoutSelection",
+  element: <LayoutSelection />
 },
 ])
 
