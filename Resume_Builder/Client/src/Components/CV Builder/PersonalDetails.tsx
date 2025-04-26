@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+
+
+
 const PersonalDetails = () => {
     const [formData, setFormData] = useState({
         fname: "",
@@ -13,26 +16,30 @@ const PersonalDetails = () => {
         summary: "",
     });
 
+
+    const personalKey = "personalDetails"
+
+
+
     // On component mount, check if data is already saved in localStorage
       useEffect(() => {
-        const savedData = localStorage.getItem("PersonalDetails");
+        const savedData = localStorage.getItem(personalKey);
         if (savedData) {
           setFormData(JSON.parse(savedData)); // Load saved data if it exists
         }
       }, []); // Empty dependency array ensures this runs only once
 
+
     // Save to localStorage when formData changes
     useEffect(() => {
         if (formData.fname || formData.mname || formData.lname || formData.gender || formData.address || formData.dob || formData.phone || formData.email || formData.summary) {
-            localStorage.setItem("PersonalDetails", JSON.stringify(formData));
+            localStorage.setItem(personalKey, JSON.stringify(formData));
         }
     }, [formData]); // This will run whenever formData changes
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [id]: value,
+        setFormData((prev) => ({...prev,[id]: value,
         }));
     };
 

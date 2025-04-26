@@ -1,19 +1,47 @@
 
 import { useState } from "react";
+const skillKey = "Skills Data"
 
 const Skills = () => {
-    const [sections, setSections] = useState([{ level: "", institution: "", year: " ", gpa: "" }])
+    const [skillsForm, setSkillsForm] = useState(()=>{
+
+        const savedData = localStorage.getItem(skillKey);
+        return savedData ?
+        JSON.parse(savedData):
+        
+        [
+            {
+                skills: ""
+            }
+        ]
+    }
+    )
 
 
+
+    //// localstorage set item
+    localStorage.setItem(skillKey, JSON.stringify(skillsForm))
+
+
+
+
+    /// handle Change function
+    const handleChange = (index, e) => {
+        const { id, value } = e.target;
+        const updatedForm = [...skillsForm]
+        updatedForm[index][id] = value;
+        setSkillsForm(updatedForm);
+
+    }
 
     // ****Adding new section ******
     const handleAddSection = () => {
-        setSections([...sections, { level: "", institution: "", year: "", gpa: "" }]);
+        setSkillsForm([...skillsForm, { skills: "" }]);
     };
     // ****Delete  section ******
     const handleDeleteSection = (indexToDelete: number) => {
-        const updatedSections = sections.filter((_, index) => index !== indexToDelete);
-        setSections(updatedSections);
+        const updatedSections = skillsForm.filter((_, index) => index !== indexToDelete);
+        setSkillsForm(updatedSections);
     };
 
 
@@ -26,7 +54,7 @@ const Skills = () => {
                     <fieldset className="border border-gray-300 rounded p-4">
                         <legend className="text-lg font-semibold px-2">Skills</legend>
 
-                        {sections.map((section, index) => (
+                        {skillsForm.map((section, index) => (
                             <>
                                 <div key={index}>
 
@@ -40,6 +68,8 @@ const Skills = () => {
                                                 <input
                                                     type="text"
                                                     id="skills"
+                                                    value={section.skills}
+                                                    onChange={(e) => handleChange(index, e)}
                                                     required
                                                     className="w-[80%] border border-blue-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                 />
@@ -55,7 +85,7 @@ const Skills = () => {
 
 
                                             {/* Delete Button (if more than one section) */}
-                                            {sections.length > 1 && (
+                                            {skillsForm.length > 1 && (
                                                 <div className="md:col-span-2 text-right mt-6 mr-3">
                                                     <button
                                                         type="button"

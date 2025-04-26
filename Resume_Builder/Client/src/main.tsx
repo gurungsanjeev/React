@@ -5,7 +5,7 @@ import Login from './Components/Login/Login.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signup from './Components/Signup/Signup.tsx'
 import Builder from './Components/CV Builder/Builder.tsx'
-import EducationDetails from './Components/CV Builder/EducationDetails.tsx'
+import EducationDetails from './Components/CV Builder/EducationDetails.jsx'
 import NormalDesign from './Components/CV Builder Design/NormalDesgin.tsx'
 import LayoutSelection from './Components/CV Builder/LayoutSelection.tsx'
 
