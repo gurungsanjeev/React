@@ -59,7 +59,7 @@ const Certification = () => {
 
 
 
-    const handleInputChange = (index, e, type) => {
+    const handleInputChange = (index, e,type) => {
         const { id, value } = e.target;
     
         if (type === "certificate") {

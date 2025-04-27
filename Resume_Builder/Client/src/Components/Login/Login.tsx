@@ -2,7 +2,16 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Footer from '../Footer'
 import NavBar from '../Navbar/NavBar'
+import axios from 'axios'
+
 const Login = () => {
+
+
+
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    axios.post("", {email, password})
+  }
   return (
     <>
 
@@ -37,6 +46,7 @@ const Login = () => {
 
             <button
               type="submit"
+              onClick={handleSubmit}
               className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
             >
               Login

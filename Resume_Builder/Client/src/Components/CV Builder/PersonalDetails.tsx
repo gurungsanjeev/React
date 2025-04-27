@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 
 
+
 const PersonalDetails = () => {
     const [formData, setFormData] = useState({
         fname: "",
