@@ -21,8 +21,15 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:3001/register", { name, email, password })
-      .then(result => {console.log(result)
-navigate('/login')
+      .then(result => {
+        console.log(result)
+        if(result.data === "user Already exists"){
+          alert("user already Existed!")
+        }else{
+
+          navigate('/login')
+        }
+        
       })
       .catch(err => console.log(err))
   }
@@ -30,7 +37,7 @@ navigate('/login')
 
 
 
-  
+
 
   return (
 
@@ -76,7 +83,7 @@ navigate('/login')
               <input
                 type="password"
                 autocomplete="new-password"
-                onChange={(e)=> setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 id="password"
                 className="w-full px-3 py-2 border border-gray-300 rounded"
                 placeholder="Create a password"
@@ -86,7 +93,7 @@ navigate('/login')
 
             <button
               type="submit"
-              
+
               className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
             >
               Sign Up
