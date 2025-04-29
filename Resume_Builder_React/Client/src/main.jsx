@@ -9,6 +9,7 @@ import NormalDesign from './Components/CV Builder Design/NormalDesign'
 import LayoutSelection from './Components/CV Builder/LayoutSelection'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
+import Preview from './Components/CV Builder Design/Preview'
 
 
 
@@ -39,10 +40,10 @@ const router = createBrowserRouter([
     path: "/normalDesign",
     element: < NormalDesign />
   },
-  // {
-  //   path: "/nDesign",
-  //   element: < NDesign />
-  // },
+  {
+    path: "/preview",
+    element: < Preview />
+  },
   {
     path: "/layoutSelection",
     element: <LayoutSelection />

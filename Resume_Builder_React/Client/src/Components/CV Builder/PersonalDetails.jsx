@@ -14,6 +14,7 @@ const PersonalDetails = () => {
         gender: "",
         address: "",
         dob: "",
+        title:"",
         phone: "",
         email: "",
         summary: "",
@@ -35,7 +36,7 @@ const PersonalDetails = () => {
 
     // Save to localStorage when formData changes
     useEffect(() => {
-        if (formData.fname || formData.mname || formData.lname || formData.gender || formData.address || formData.dob || formData.phone || formData.email || formData.summary) {
+        if (formData.fname || formData.mname || formData.lname || formData.gender || formData.title || formData.address || formData.dob || formData.phone || formData.email || formData.summary) {
             localStorage.setItem(personalKey, JSON.stringify(formData));
         }
     }, [formData]); // This will run whenever formData changes
@@ -179,6 +180,19 @@ const PersonalDetails = () => {
                                     className="w-full border border-blue-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 />
                             </div>
+                        </div>
+                        <div className="grid mt-4">
+                            <label htmlFor="title" className="block font-medium mb-1">
+                                Title
+                            </label>
+                            <input type='text'
+                                name="title"
+                                id="title"
+                                value={formData.title}
+                                onChange={handleChange}
+                                placeholder='Web Developer, Data Scientist, etc..'
+                                className="w-full border-2 p-2 border-gray-400 rounded-lg " 
+                            />
                         </div>
 
                         <div className="grid mt-4">

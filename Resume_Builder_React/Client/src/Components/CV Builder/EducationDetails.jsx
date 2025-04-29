@@ -20,7 +20,10 @@ const EducationDetails = () => {
 
     // Save to localStorage whenever educationForm changes
     useEffect(() => {
-        localStorage.setItem(educationKey, JSON.stringify(educationForm));
+
+        if (educationForm.level || educationForm.institution || educationForm.programme || educationForm.year || educationForm.gpa ) {
+            localStorage.setItem(educationKey, JSON.stringify(educationForm));
+        }
     }, [educationForm]);
 
 

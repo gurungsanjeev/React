@@ -1,7 +1,7 @@
 import React from 'react'
+import InnerNavBar from '../NavBar/InnerNavBar'
 
 
-import InnerNavBar from "../Navbar/InnerNavBar"
 import { Link } from "react-router-dom"
 
 
@@ -14,15 +14,16 @@ const LayoutSelection = () => {
             Link:'/normalDesign'
     },
         {
-            name:"N Layout",
+            name:"Preview Layout",
             img : "Normal Design.png",
-            Link:'/nDesign'
+            Link:'/preview'
     }
 ]
 
 
   return (
     <>
+
 <InnerNavBar/>
 <div className="body h-dvh w-full flex justify-center items-center bg-gradient-to-br from-blue-300 via-purple-300 to-pink-300">
     

@@ -4,7 +4,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 
 
-const experienceKey = "Work Experiences"
+const experienceKey = "WorkExperiences"
 const Experiences = () => {
     const [experienceForm, setExperienceForm] = useState(() => {
         const savedData = localStorage.getItem(experienceKey);
