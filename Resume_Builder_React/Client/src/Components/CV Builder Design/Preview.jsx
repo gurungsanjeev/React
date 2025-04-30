@@ -107,43 +107,7 @@ const Preview = () => {
 
       {/* //////////////////////////////////// This is second layout////////////////////// */}
 
-      <div className="p-8">
-        <h1 className="text-2xl font-bold mb-4">Resume Preview</h1>
-
-        {/* Personal Info */}
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold">Personal Information</h2>
-          <p>Name: {personalInfo.fname}</p>
-          <p>Email: {personalInfo.email}</p>
-          <p>Phone: {personalInfo.phone}</p>
-        </section>
-
-        {/* Education */}
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold">Education</h2>
-          <p>School: {educationInfo.school}</p>
-          <p>Degree: {educationInfo.degree}</p>
-          <p>Year: {educationInfo.year}</p>
-        </section>
-
-        {/* Experience */}
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold">Experience</h2>
-          <p>Company: {experienceInfo.company}</p>
-          <p>Position: {experienceInfo.position}</p>
-          <p>Duration: {experienceInfo.duration}</p>
-        </section>
-
-        {/* Skills */}
-        <section className="mb-6">
-          <h2 className="text-xl font-semibold">Skills</h2>
-          <ul>
-            {skills.map((skill, index) => (
-              <li key={index}>• {skill}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
+      
     </>
   );
 };
