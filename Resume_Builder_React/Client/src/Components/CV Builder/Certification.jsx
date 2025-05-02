@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from "react";
 
-const certificateKey = "Certificate Data"
-const achievementKey = "Achievement Data"
+const certificateKey = "CertificateData"
+const achievementKey = "AchievementData"
 
 const Certification = () => {
     const [certificateForm, setCertificateForm] = useState(() => {
@@ -111,7 +111,7 @@ const Certification = () => {
                 <form action="">
 
                     <fieldset className="border border-gray-300 rounded p-4">
-                        <legend className="text-lg font-semibold px-2">Certification</legend>
+                        <legend className="text-lg font-semibold px-2">Certification & Training</legend>
 
                         {certificateForm.map((section, index) => (
                             <>
@@ -148,7 +148,7 @@ const Certification = () => {
                                         <div>
                                             <label htmlFor="date" className="block font-medium mb-1">Completed Date</label>
                                             <input
-                                                type="text"
+                                                type="date"
                                                 id="date"
                                                 placeholder="15-July"
                                                 value={section.date}
@@ -157,7 +157,7 @@ const Certification = () => {
                                                 className="w-full border border-blue-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
                                         </div>
-                                        {/* Year of completed */}
+                                        {/* Year of completed
                                         <div>
                                             <label htmlFor="year" className="block font-medium mb-1">Completed Year</label>
                                             <input
@@ -169,7 +169,7 @@ const Certification = () => {
                                                 required
                                                 className="w-full border border-blue-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                        </div>
+                                        </div> */}
 
                                     </div>
 

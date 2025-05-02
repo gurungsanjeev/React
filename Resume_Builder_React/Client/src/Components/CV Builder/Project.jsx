@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useState } from "react";
 
-const projectKey = "Project Data"
+const projectKey = "ProjectData"
 
 const Project = () => {
     const [projectForm, setProjectForm] = useState(() => {

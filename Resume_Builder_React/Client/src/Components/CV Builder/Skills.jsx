@@ -2,7 +2,7 @@ import React from 'react'
 
 
 import { useState } from "react";
-const skillKey = "Skills Data"
+const skillKey = "SkillsDetails"
 
 const Skills = () => {
     const [skillsForm, setSkillsForm] = useState(()=>{
