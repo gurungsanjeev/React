@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center ">
         {/* Logo / Brand */}
         <div className="text-2xl font-bold text-white">
-          <Link to="/home">ProfileBuilder</Link>
+          <Link to="/home">Resume Builder</Link>
         </div>
 
         {/* Navigation Links */}

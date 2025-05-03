@@ -67,6 +67,20 @@ const Experiences = () => {
 
 
 
+    const handleReset = () => {
+        setExperienceForm([{
+            institution: "",
+            position: "",
+            jDate: "",
+            eDate: "",
+            role: ""
+        }])
+        
+
+        localStorage.removeItem(experienceKey);
+       
+    }
+
 
     return (
         <>
@@ -170,6 +184,9 @@ const Experiences = () => {
                     </fieldset>
 
                 </form>
+                <div className='mt-8 flex justify-center items-center '>
+                    <button className='bg-red-500 text-white px-6 py-2 rounded-sm' onClick={handleReset}>Reset all</button>
+                </div>
             </div>
         </>
     )

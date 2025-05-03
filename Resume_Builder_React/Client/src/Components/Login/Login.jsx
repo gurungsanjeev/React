@@ -1,16 +1,18 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import Footer from '../Footer'
-import NavBar from '../Navbar/NavBar'
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
+
 
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  
+  
   const navigate = useNavigate();
 
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -19,8 +21,11 @@ const Login = () => {
         console.log(result)
         if(result.data === "success")
           {
-
-          navigate('/home')
+            localStorage.setItem("isAuthenticated", "true");
+            navigate('/home')
+        }
+        else if(email === "" && password===""){
+          alert("Please enter your email and password")
         }
         else{
           alert("your password is incorrect!!")
@@ -30,10 +35,13 @@ const Login = () => {
       .catch(err => console.log(err));
 
   }
+
+ 
+  
   return (
     <>
 
-      <NavBar />
+     
       <div className="flex items-center justify-center h-screen w-full bg-gray-100">
         <div className="w-full max-w-sm p-8 bg-white rounded-xl shadow-lg ">
           <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
@@ -63,6 +71,7 @@ const Login = () => {
                 placeholder="Enter your password"
               />
             </div>
+            
 
             <button
               type="submit"
@@ -84,7 +93,7 @@ const Login = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   )
 }

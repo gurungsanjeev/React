@@ -7,7 +7,8 @@ import Experiences from "./Experiences";
 import Skills from "./Skills";
 import Certification from "./Certification";
 import Project from "./Project";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import Footer from "../Footer";
 
 
 const Builder = () => {
@@ -32,11 +33,11 @@ const Builder = () => {
         },
         {
             title: "Work Experience",
-            content: <Experiences/>,
+            content: <Experiences />,
         },
         {
             title: "Projects",
-            content: <Project/>,
+            content: <Project />,
         },
         {
             title: "Skills",
@@ -44,21 +45,22 @@ const Builder = () => {
         },
         {
             title: "Certification & Training",
-            content: <Certification/>,
+            content: <Certification />,
         },
-      
+
     ];
 
     return (
         <>
-            <InnerNavBar />
+            
+            
             <div className="w-full min-h-screen bg-zinc-100 p-6">
                 <Steps current={pagination} items={steps.map(({ title }) => ({ title }))} />
 
                 <div className="mt-8">{steps[pagination].content}</div>
 
                 <div className="flex justify-center gap-6">
-                    {pagination > 0 && pagination <= steps.length -1 && (
+                    {pagination > 0 && pagination <= steps.length - 1 && (
                         <button
                             className="bg-blue-700 text-white p-4 rounded-lg mt-4 px-8 hover:bg-blue-800"
                             onClick={handleBack}
@@ -66,7 +68,9 @@ const Builder = () => {
                             Back
                         </button>
                     )}
-                    {pagination < steps.length - 1 &&  (
+
+
+                    {pagination < steps.length - 1 && (
                         <button
                             className="bg-blue-700 text-white p-4 rounded-lg mt-4 px-8 hover:bg-blue-800"
                             onClick={handleNxt}
@@ -74,18 +78,20 @@ const Builder = () => {
                             Next
                         </button>
                     )}
-                    {pagination == steps.length-1 && (
+
+                    {pagination == steps.length - 1 && (
                         <Link to="/LayoutSelection">
-                        <button
-                            className="bg-blue-700 text-white p-4 rounded-lg mt-4 px-8 hover:bg-blue-800"
-                            onClick={handleNxt}
+                            <button
+                                className="bg-blue-700 text-white p-4 rounded-lg mt-4 px-8 hover:bg-blue-800"
+                                onClick={handleNxt}
                             >
-                            Proceed
-                        </button>
-                            </Link>
+                                Proceed
+                            </button>
+                        </Link>
                     )}
                 </div>
             </div>
+            
         </>
     );
 };

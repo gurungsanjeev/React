@@ -2,9 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 
 const educationKey = "EducationDetails"
-const EducationDetails = () => {
-    // 
-    
+const EducationDetails = () => {    
     const [educationForm, setEducationForm] = useState(() => {
         const savedData = localStorage.getItem(educationKey);
         try {
@@ -62,6 +60,21 @@ const EducationDetails = () => {
         const updatedSections = educationForm.filter((_, i) => i !== index);  // Removing the item at the index
         setEducationForm(updatedSections);  // Update the state with the filtered sections
     };
+
+
+    const handleReset = () => {
+        setEducationForm([{
+            level: "",
+            affiliated: "",
+            programme: "",
+            year: "",
+            gpa: ""
+        }])
+        
+
+        localStorage.removeItem(educationKey);
+       
+    }
 
 
     return (
@@ -179,6 +192,9 @@ const EducationDetails = () => {
                     </fieldset>
 
                 </form>
+                <div className='mt-8 flex justify-center items-center '>
+                            <button className='bg-red-500 text-white px-6 py-2 rounded-sm' onClick={handleReset}>Reset all</button>
+                        </div>
             </div>
         </>
     )

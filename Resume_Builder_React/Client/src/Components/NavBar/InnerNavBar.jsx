@@ -1,24 +1,17 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const InnerNavBar = () => {
-  const [username, setUserName] = useState("");
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token"); // Get the token from local storage
 
-    if (token) {
-      axios.get('http://127.0.0.1:3001/navbar', {
-        headers: {
-          Authorization: token // Send token in Authorization header
-        }
-      })
-      .then(response => {
-        setUserName(response.data.username);
-      })
-      .catch(err => console.log(err));
-    }
-  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    navigate("/login");
+  }
+
+/// fetch isAuthenticated from the local storage
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+  // console.log("Authenticated:", isAuthenticated);
 
   return (
     <>
@@ -28,12 +21,11 @@ const InnerNavBar = () => {
           <div className="logo">
             <h1 className="text-white text-2xl font-bold"> Resume Builder</h1>
           </div>
+{/* //// it check if the isAuthenicated value is true or not */}
+          {isAuthenticated ? (<div className="profile-section flex items-center gap-2">
+            <button onClick={handleLogout}>Logout</button>
+          </div>) : ""}
 
-          {/* Profile section */}
-          <div className="profile-section flex items-center gap-2">
-            <img src="user.jpg" alt="user" className="h-12 w-12 rounded-full" />
-            <p className="text-white font-semibold">{username}</p>
-          </div>
         </div>
       </nav>
     </>

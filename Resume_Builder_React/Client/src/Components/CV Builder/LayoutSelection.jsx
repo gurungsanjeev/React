@@ -3,6 +3,7 @@ import InnerNavBar from '../NavBar/InnerNavBar'
 
 
 import { Link } from "react-router-dom"
+import Footer from '../Footer'
 
 
 const LayoutSelection = () => {
@@ -18,14 +19,18 @@ const LayoutSelection = () => {
             img: "Normal Design.png",
             Link: '/design'
         },
-       
+        {
+            name: "Comming soon",
+            img: "comming soon",
+            Link: '#'
+        },
+
     ]
 
 
     return (
         <>
-
-            <InnerNavBar />
+            
             <div className="body h-dvh w-full flex justify-center items-center bg-gradient-to-br from-blue-300 via-purple-300 to-pink-300">
 
                 {DesignLayout.map((layout, index) => (
@@ -38,6 +43,7 @@ const LayoutSelection = () => {
                     </div>
                 ))}
             </div>
+          
 
 
 

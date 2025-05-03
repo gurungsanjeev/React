@@ -1,17 +1,17 @@
 import React from 'react'
-import { useState, useEffect, useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import { useState, useEffect} from 'react';
+
 
 
 const Design = () => {
 
     const [personalInfo, setPersonalInfo] = useState({});
-    const [educationInfo, setEducationInfo] = useState([{}]);
-    const [experienceInfo, setExperienceInfo] = useState([{}]);
-    const [certification, setCertification] = useState([{}]);
-    const [achievement, setAchievement] = useState([{}]);
-    const [skills, setSkills] = useState([{}]);
-    const [projects, setProjects] = useState([{}]);
+    const [educationInfo, setEducationInfo] = useState([]);
+    const [experienceInfo, setExperienceInfo] = useState([]);
+    const [certification, setCertification] = useState([]);
+    const [achievement, setAchievement] = useState([]);
+    const [skills, setSkills] = useState([]);
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         const personal = JSON.parse(localStorage.getItem("personalDetails"));
@@ -31,43 +31,48 @@ const Design = () => {
         if (achievement) setAchievement(achievement);
     }, []);
 
-    const componentRef = useRef();
+//     const componentRef = useRef();
 
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-        documentTitle: 'My_Resume',
-        pageStyle: `
-            @page { margin: 40px; }
-            body { font-family: sans-serif; }
-        `
-    });
+//     const handlePrint = useReactToPrint({
+//         content: () => componentRef.current,
+//         documentTitle: 'Resume',
+//       });
+
+//       useEffect(() => {
+//   console.log("Component ready for print:", componentRef.current);
+// }, []);
+      
+      
+    
+      
+      
+   
 
 
 
     return (
         <>
             
-      {/* Download Button */}
+      {/* Download Button
       <div className="text-right mb-4">
         <button 
           onClick={handlePrint} 
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
           Download as PDF
         </button>
-      </div>
+      </div> */}
 
       
-            <div ref={componentRef} className="max-w-4xl mx-auto bg-white p-10 shadow-lg rounded-lg font-sans leading-relaxed text-gray-900">
+            <div  className="max-w-4xl mx-auto bg-white p-10 shadow-lg rounded-lg font-sans leading-relaxed text-gray-900">
                 {/* Header */}
-                <header className="border-b pb-6 mb-6">
+                <header className=" pb-6 mb-6">
                     <h1 className="text-3xl font-bold uppercase tracking-wide">{personalInfo.fname} {personalInfo.mname} {personalInfo.lname}</h1>
                     <p className="text-lg text-gray-600">{personalInfo.title}</p>
                     <div className="mt-2 text-sm text-gray-500 space-y-1">
                         <p>Email: {personalInfo.email}</p>
                         <p>Phone: {personalInfo.phone}</p>
                         <p>Address: {personalInfo.address}</p>
-                        {personalInfo.linkedin && <p>LinkedIn: {personalInfo.linkedin}</p>}
-                        {personalInfo.website && <p>Portfolio: {personalInfo.website}</p>}
+                       
                     </div>
                 </header>
 

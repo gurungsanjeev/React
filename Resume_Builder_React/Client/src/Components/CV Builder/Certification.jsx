@@ -59,9 +59,9 @@ const Certification = () => {
 
 
 
-    const handleInputChange = (index, e,type) => {
+    const handleInputChange = (index, e, type) => {
         const { id, value } = e.target;
-    
+
         if (type === "certificate") {
             const updated = [...certificateForm];
             updated[index][id] = value;
@@ -88,20 +88,40 @@ const Certification = () => {
 
 
     // ****Delete Certificate section ******
-    
+
     const handleDeleteCertificateSection = (index) => {
         const updatedSections = certificateForm.filter((_, i) => i !== index);  // Removing the item at the index
-        setCertificateForm(updatedSections); 
+        setCertificateForm(updatedSections);
     };
 
 
     // ****Delete Achievement section ******
- 
+
 
     const handleDeleteAchievementSection = (index) => {
         const updatedSections = achievementForm.filter((_, i) => i !== index);  // Removing the item at the index
         setAcheivementForm(updatedSections);  // Update the state with the filtered sections
     };
+
+
+
+    const handleReset = () => {
+        setCertificateForm([{
+            institution: "",
+            awardtitle: "",
+            awarddate: " ",
+            year: ""
+        }])
+        setAcheivementForm([{
+            institution: "",
+            awardtitle: "",
+            awarddate: " ",
+            year: ""
+        }])
+
+        localStorage.removeItem(certificateKey);
+        localStorage.removeItem(achievementKey);
+    }
 
 
     return (
@@ -124,7 +144,7 @@ const Certification = () => {
                                                 type="text"
                                                 id="institution"
                                                 value={section.institution}
-                                                onChange={(e) => handleInputChange(index, e,"certificate")}
+                                                onChange={(e) => handleInputChange(index, e, "certificate")}
                                                 required
                                                 className="w-full border border-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
@@ -296,6 +316,9 @@ const Certification = () => {
                     </fieldset>
 
                 </form>
+                <div className='mt-8 flex justify-center items-center '>
+                    <button className='bg-red-500 text-white px-6 py-2 rounded-sm' onClick={handleReset}>Reset all</button>
+                </div>
             </div>
         </>
     )

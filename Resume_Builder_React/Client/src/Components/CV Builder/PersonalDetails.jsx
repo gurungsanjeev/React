@@ -14,7 +14,7 @@ const PersonalDetails = () => {
         gender: "",
         address: "",
         dob: "",
-        title:"",
+        title: "",
         phone: "",
         email: "",
         summary: "",
@@ -26,12 +26,12 @@ const PersonalDetails = () => {
 
 
     // On component mount, check if data is already saved in localStorage
-      useEffect(() => {
+    useEffect(() => {
         const savedData = localStorage.getItem(personalKey);
         if (savedData) {
-          setFormData(JSON.parse(savedData)); // Load saved data if it exists
+            setFormData(JSON.parse(savedData)); // Load saved data if it exists
         }
-      }, []); // Empty dependency array ensures this runs only once
+    }, []); // Empty dependency array ensures this runs only once
 
 
     // Save to localStorage when formData changes
@@ -43,9 +43,27 @@ const PersonalDetails = () => {
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setFormData((prev) => ({...prev,[id]: value,
+        setFormData((prev) => ({
+            ...prev, [id]: value,
         }));
     };
+
+    const handleReset = () => {
+        setFormData({
+            fname: "",
+            mname: "",
+            lname: "",
+            gender: "",
+            address: "",
+            dob: "",
+            title: "",
+            phone: "",
+            email: "",
+            summary: "",
+        })
+
+        localStorage.removeItem(personalKey);
+    }
 
     return (
         <>
@@ -117,7 +135,7 @@ const PersonalDetails = () => {
                                     <option value="Other">Other</option>
 
                                 </select>
-                               
+
                             </div>
 
                             {/* Address */}
@@ -191,7 +209,7 @@ const PersonalDetails = () => {
                                 value={formData.title}
                                 onChange={handleChange}
                                 placeholder='Web Developer, Data Scientist, etc..'
-                                className="w-full border-2 p-2 border-gray-400 rounded-lg " 
+                                className="w-full border-2 p-2 border-gray-400 rounded-lg "
                             />
                         </div>
 
@@ -207,8 +225,12 @@ const PersonalDetails = () => {
                                 className="w-full border-2 p-2 border-gray-400 rounded-lg h-40"
                             ></textarea>
                         </div>
+
                     </fieldset>
                 </form>
+            </div>
+            <div className='mt-8 flex justify-center items-center '>
+                <button className='bg-red-500 text-white px-6 py-2 rounded-sm' onClick={handleReset}>Reset all</button>
             </div>
         </>
     );

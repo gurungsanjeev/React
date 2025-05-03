@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Login from '../Login/Login'
 import NavBar from '../Navbar/NavBar'
 import axios from 'axios'
+import Footer from '../Footer'
 
 
 const Signup = () => {
@@ -43,7 +44,7 @@ const Signup = () => {
 
 
     <>
-      <NavBar />
+      
       <div className="flex items-center justify-center min-h-screen w-full bg-gray-100">
         <div className="w-full max-w-sm p-8 bg-white  shadow-lg rounded-xl">
           <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
@@ -110,6 +111,7 @@ const Signup = () => {
           </p>
         </div>
       </div>
+      
     </>
   )
 }
