@@ -23,7 +23,7 @@ const InnerNavBar = () => {
           </div>
 {/* //// it check if the isAuthenicated value is true or not */}
           {isAuthenticated ? (<div className="profile-section flex items-center gap-2">
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout} className="text-white font-semibold">Logout</button>
           </div>) : ""}
 
         </div>
